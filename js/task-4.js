@@ -6,7 +6,6 @@ const initFormHandler = () => {
 const formHandler = (e) => {
     const errorMessage = 'All form fields must be filled in';
     e.preventDefault()
-    event.preventDefault(); // Запобігаємо перезавантаженню сторінки
 
     const { email, password } = e.currentTarget.elements;
     const emailValue = email.value.trim();
@@ -23,7 +22,7 @@ const formHandler = (e) => {
     };
 
     console.log(formData);
-    loginForm.reset();
+    e.currentTarget.reset();
 }
 
 document.addEventListener("DOMContentLoaded", initFormHandler);

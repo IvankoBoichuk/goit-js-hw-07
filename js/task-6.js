@@ -26,7 +26,9 @@ const destroyHandler = (e) => {
 
 const createBoxes = (amount) => {
   const htmlBoxex = document.getElementById("boxes");
+  const elements = [];
   htmlBoxex.innerHTML = "";
+
   for (let index = 0; index < amount; index++) {
     const htmlBox = document.createElement("div");
     htmlBox.style = `
@@ -34,8 +36,9 @@ const createBoxes = (amount) => {
       height: ${30 + index * 10}px;
       background-color: ${getRandomHexColor()};
     `
-    htmlBoxex.append(htmlBox)
+    elements.push(htmlBox)
   }
+  htmlBoxex.append(...elements)
 }
 
 document.addEventListener("DOMContentLoaded", init);
